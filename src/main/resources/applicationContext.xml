@@ -8,13 +8,13 @@
 
 	<context:component-scan base-package="ai.yunxi.demo" />
 
-	<bean id="zkCentralConfigurer" class="ai.yunxi.demo.config.ZookeeperCentralConfigurer">
+	<bean id="zkCentralConfigurer" class="zk.demo.config.ZookeeperCentralConfigurer">
 		<constructor-arg name="zkServers" value="192.168.56.101:2181" />
 		<constructor-arg name="sessionTimeout" value="1000" />
 		<constructor-arg name="zkPath" value="/Jdbc" />
 	</bean>
 
-	<bean id="zkPlaceholderConfigurer" class="ai.yunxi.demo.config.ZookeeperPlaceholderConfigurer">
+	<bean id="zkPlaceholderConfigurer" class="zk.demo.config.ZookeeperPlaceholderConfigurer">
 		<property name="zkCentralConfigurer" ref="zkCentralConfigurer" />
 		<property name="ignoreUnresolvablePlaceholders" value="true" />
 		<property name="order" value="1" />
